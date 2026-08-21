@@ -16,6 +16,7 @@
 }
 *{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
+html,body{max-width:100%;overflow-x:hidden;}
 body{
   font-family:var(--body);
   background:var(--bg);
@@ -59,16 +60,25 @@ header{
   padding:9px 18px;border-radius:100px;
   font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;
 }
-.menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:22px;cursor:pointer;}
+.menu-toggle{
+  display:none;background:none;border:none;color:var(--cream);font-size:22px;cursor:pointer;
+  min-width:44px;min-height:44px;line-height:1;
+}
+.navlink-whatsapp{display:none;}
 @media (max-width:760px){
+  .nav{padding:14px 20px;}
+  .nav-cta{display:none;}
   .navlinks{
     display:none;
     position:absolute; top:100%; left:0; right:0;
     background:var(--bg); flex-direction:column; gap:0;
     border-bottom:1px solid var(--line);
+    max-height:calc(100vh - 60px);
+    overflow-y:auto;
   }
   .navlinks.open{display:flex;}
   .navlinks a{padding:14px 24px;border-bottom:1px solid var(--line);}
+  .navlink-whatsapp{display:block;color:var(--gold-soft) !important;font-weight:600;}
   .menu-toggle{display:block;}
 }
 
@@ -197,6 +207,19 @@ header{
 .form-note{font-size:12.5px;color:var(--paper-dim);opacity:.7;margin-top:10px;}
 
 /* ---- footer ---- */
+@media (max-width:480px){
+  section{padding:64px 20px;}
+  .hero{padding:88px 20px 64px;}
+  .page-hero{padding:64px 20px 40px;}
+  .hero-actions{gap:12px;}
+  .hero-actions .btn-primary, .hero-actions .btn-ghost{width:100%;text-align:center;}
+  .contact-list li{flex-direction:column;gap:4px;}
+  .contact-list .label{min-width:auto;}
+  .value-cards{grid-template-columns:1fr;}
+  .contact-form{padding:24px 20px;}
+  .mission-card{padding:24px 20px;}
+}
+
 footer{background:var(--ink);padding:48px 24px 32px;color:var(--paper-dim);}
 .footer-inner{max-width:1040px;margin:0 auto;}
 .disclaimer{font-size:12.5px;line-height:1.7;color:rgba(244,239,226,0.55);border-top:1px solid rgba(244,239,226,0.12);padding-top:24px;margin-top:24px;}
