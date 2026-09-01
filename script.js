@@ -1,3 +1,11 @@
+const WHATSAPP_ORDER_NUMBER = '22995673480';
+
+function openWhatsAppOrder(productName) {
+  const message = `${productName}, je veux commander`;
+  const url = `https://wa.me/${WHATSAPP_ORDER_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank', 'noopener');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
   const links = document.querySelector('.navlinks');
